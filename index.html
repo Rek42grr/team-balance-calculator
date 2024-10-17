@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>팀 티어 균형 계산기</title>
+    <title>팀 균형 계산기</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,7 +24,7 @@
         </style>
 </head>
 <body>
-    <h2>팀 티어 균형 계산기</h2>
+    <h2>팀 균형 계산기</h2>
     <div id="inputs">
         <!-- 10명의 플레이어 이름과 티어 입력 -->
         <div class="player-input">
@@ -148,14 +148,14 @@
                 } else {
                     influenceTier = avgTierName;
                 }
-                return `(팀1이 ${influenceTier} ${(influenceValue / tierDistribution[influenceTier]).toFixed(3)}명만큼 우세함)`;
+                return `(1팀이 ${influenceTier} ${(influenceValue / tierDistribution[influenceTier]).toFixed(3)}명만큼 우세함)`;
             } else if (avgTier2 > avgTier1) {
                 if (avgTier2 <= maxTierValue && avgTier1 >= minTierValue) {
                     influenceTier = getAverageTierName(avgTier2);
                 } else {
                     influenceTier = avgTierName;
                 }
-                return `(팀2가 ${influenceTier} ${(influenceValue / tierDistribution[influenceTier]).toFixed(3)}명만큼 우세함)`;
+                return `(2팀이 ${influenceTier} ${(influenceValue / tierDistribution[influenceTier]).toFixed(3)}명만큼 우세함)`;
             } else {
                 return ``;
             }
@@ -222,9 +222,9 @@
 
             let influenceText = calculateInfluence(bestTeam1.reduce((sum, p) => sum + p.tier, 0) / 5, bestTeam2.reduce((sum, p) => sum + p.tier, 0) / 5);
 
-            let resultText = `팀 1: ${bestTeam1.map(p => p.name).join(', ')} (평균 티어: ${avgTier1Name}) ${bestTeam1.map(p => p.tierName).join(', ')}\n`;
-            resultText += `팀 2: ${bestTeam2.map(p => p.name).join(', ')} (평균 티어: ${avgTier2Name}) ${bestTeam2.map(p => p.tierName).join(', ')}\n`;
-            resultText += `팀 티어 평균 차이: ${minDiff.toFixed(2)}\n${influenceText}`;
+            let resultText = `1팀 : ${bestTeam1.map(p => p.name).join(', ')} (평균 티어: ${avgTier1Name}) ${bestTeam1.map(p => p.tierName).join(', ')}\n`;
+            resultText += `2팀 : ${bestTeam2.map(p => p.name).join(', ')} (평균 티어: ${avgTier2Name}) ${bestTeam2.map(p => p.tierName).join(', ')}\n`;
+            resultText += `팀 평균 차이: ${minDiff.toFixed(2)}\n${influenceText}`;
 
             document.getElementById('result').innerText = resultText;
         }
