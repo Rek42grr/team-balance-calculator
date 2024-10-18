@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>팀 균형 계산기</title>
+    <title>내전 밸런스 계산</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,58 +26,58 @@
 <body>
     <h2>팀 균형 계산기</h2>
     <div id="inputs">
-        <!-- 10명의 플레이어 이름과 티어 입력 -->
         <div class="player-input">
-            <label>플레이어 1: 이름 <input type="text" id="player_name1"> 티어 
+            <label>Player 1 : <input type="text" id="player_name1"> Tier 
                 <select class="tier-select" id="player_tier1"></select>
             </label>
         </div>
         <div class="player-input">
-            <label>플레이어 2: 이름 <input type="text" id="player_name2"> 티어 
+            <label>Player 2 : <input type="text" id="player_name2"> Tier 
                 <select class="tier-select" id="player_tier2"></select>
             </label>
         </div>
         <div class="player-input">
-            <label>플레이어 3: 이름 <input type="text" id="player_name3"> 티어 
+            <label>Player 3 : <input type="text" id="player_name3"> Tier 
                 <select class="tier-select" id="player_tier3"></select>
             </label>
         </div>
         <div class="player-input">
-            <label>플레이어 4: 이름 <input type="text" id="player_name4"> 티어 
+            <label>Player 4 : <input type="text" id="player_name4"> Tier 
                 <select class="tier-select" id="player_tier4"></select>
             </label>
         </div>
         <div class="player-input">
-            <label>플레이어 5: 이름 <input type="text" id="player_name5"> 티어 
+            <label>Player 5 : <input type="text" id="player_name5"> Tier 
                 <select class="tier-select" id="player_tier5"></select>
             </label>
         </div>
         <div class="player-input">
-            <label>플레이어 6: 이름 <input type="text" id="player_name6"> 티어 
+            <label>Player 6 : <input type="text" id="player_name6"> Tier 
                 <select class="tier-select" id="player_tier6"></select>
             </label>
         </div>
         <div class="player-input">
-            <label>플레이어 7: 이름 <input type="text" id="player_name7"> 티어 
+            <label>Player 7 : <input type="text" id="player_name7"> Tier 
                 <select class="tier-select" id="player_tier7"></select>
             </label>
         </div>
         <div class="player-input">
-            <label>플레이어 8: 이름 <input type="text" id="player_name8"> 티어 
+            <label>Player 8 : <input type="text" id="player_name8"> Tier 
                 <select class="tier-select" id="player_tier8"></select>
             </label>
         </div>
         <div class="player-input">
-            <label>플레이어 9: 이름 <input type="text" id="player_name9"> 티어 
+            <label>Player 9 : <input type="text" id="player_name9"> Tier 
                 <select class="tier-select" id="player_tier9"></select>
             </label>
         </div>
         <div class="player-input">
-            <label>플레이어 10: 이름 <input type="text" id="player_name10"> 티어 
+            <label>Player10 : <input type="text" id="player_name10"> Tier 
                 <select class="tier-select" id="player_tier10"></select>
             </label>
         </div>
     </div>
+    <p style="margin-left: -266px; font-size: 10px"><label>made by 3945872349851086</label><p>
     <button onclick="calculateBalancedTeams()" class="team-button">팀 나누기</button>
     <div id="result"></div>
 
@@ -138,7 +138,6 @@
             let avgTierName = getAverageTierName(avgTierValue);
             let influenceTier;
 
-            // 제한된 영향력 범위 계산 (4단계 이내만 표시)
             let maxTierValue = tierDistribution[avgTierName] + 4;
             let minTierValue = tierDistribution[avgTierName] - 4;
 
